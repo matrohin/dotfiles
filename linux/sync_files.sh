@@ -1,2 +1,5 @@
-rsync --exclude "sync_files.sh" -avh --no-perms . ~
+rsync \
+  --exclude "sync_files.sh" \
+  --exclude "install.sh" \
+  -avh --no-perms . ~
 
