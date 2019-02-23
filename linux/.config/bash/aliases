@@ -1,0 +1,6 @@
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
+alias mc='. /usr/share/mc/bin/mc-wrapper.sh'
+

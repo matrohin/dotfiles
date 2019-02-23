@@ -1,0 +1,26 @@
+# Solarized colors
+# (https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized#the-values)
+black=$(tput setaf 0)
+blue=$(tput setaf 33)
+cyan=$(tput setaf 37)
+green=$(tput setaf 64)
+orange=$(tput setaf 166)
+purple=$(tput setaf 125)
+red=$(tput setaf 124)
+white=$(tput setaf 15)
+yellow=$(tput setaf 136)
+
+if [[ "${USER}" == "root" ]]; then
+  userStyle="${red}";
+else
+  userStyle="${orange}";
+fi;
+
+PS1="\[${bold}\]\n";
+PS1+="\[${userStyle}\]\u";
+PS1+="\[${white}\] in ";
+PS1+="\[${cyan}\]\w";
+PS1+="\[${green}\] [\d]";
+PS1+="\n\[${white}\]\$ \[${reset}\]";
+
+export PS1
