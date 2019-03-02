@@ -5,11 +5,13 @@ set backspace=indent,eol,start
 set ruler
 set number
 set showcmd
+
+" Search
 set incsearch
 set hlsearch
-
-" Clear highlighting on escape in normal mode
+set ic
 nnoremap <esc> :noh<return><esc>
+vnoremap // y/<C-R>"<CR>
 
 syntax on
 
@@ -37,6 +39,10 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_show_hidden = 1
+let g:ctrlp_max_files = ''
+let g:ctrlp_max_depth=40
+let g:ctrlp_clear_cache_on_exit = 0
+nnoremap <C-l> :CtrlPTag<CR>
 
 Plug 'itchyny/lightline.vim'
 
@@ -51,6 +57,11 @@ nnoremap <leader>f :NERDTreeFind<Enter>
 let NERDTreeQuitOnOpen = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
+
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+let g:deoplete#enable_at_startup = 1
+
+Plug 'ludovicchabant/vim-gutentags'
 
 call plug#end()
 
