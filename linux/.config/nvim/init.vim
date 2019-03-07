@@ -45,6 +45,18 @@ let g:ctrlp_clear_cache_on_exit = 0
 nnoremap <C-l> :CtrlPTag<CR>
 
 Plug 'itchyny/lightline.vim'
+set noshowmode
+" Replace filename component of Lightline statusline
+let g:lightline = {
+  \ 'component_function': {
+  \   'filename': 'FilenameForLightline'
+  \ }
+  \ }
+
+" Show full path of filename
+function! FilenameForLightline()
+  return expand('%')
+endfunction
 
 Plug 'edkolev/tmuxline.vim'
 let g:tmuxline_powerline_separators = 0
