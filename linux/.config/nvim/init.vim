@@ -65,15 +65,23 @@ Plug 'KabbAmine/zeavim.vim'
 
 Plug 'vim-scripts/The-NERD-tree'
 nnoremap <leader>t :NERDTreeToggle<Enter>
-nnoremap <leader>f :NERDTreeFind<Enter>
+nnoremap <leader>T :NERDTreeFind<Enter>
 let NERDTreeQuitOnOpen = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'deoplete-plugins/deoplete-clang'
 let g:deoplete#enable_at_startup = 1
 
 Plug 'ludovicchabant/vim-gutentags'
+let g:gutentags_project_root = ['.root']
+
+Plug 'vim-scripts/a.vim'
+
+Plug 'rhysd/vim-clang-format'
+nnoremap <leader>f :ClangFormat<Enter>
+vnoremap <leader>f :ClangFormat<Enter>
 
 call plug#end()
 
