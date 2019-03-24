@@ -3,7 +3,7 @@ set nocompatible
 " --- General settings ---
 set backspace=indent,eol,start
 set ruler
-set number
+set number relativenumber
 set showcmd
 
 " Search
@@ -73,6 +73,7 @@ let NERDTreeDirArrows = 1
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'deoplete-plugins/deoplete-clang'
 let g:deoplete#enable_at_startup = 1
+set completeopt-=preview
 
 Plug 'ludovicchabant/vim-gutentags'
 let g:gutentags_project_root = ['.root']
