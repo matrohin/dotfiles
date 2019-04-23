@@ -84,5 +84,9 @@ Plug 'rhysd/vim-clang-format'
 nnoremap <leader>f :ClangFormat<Enter>
 vnoremap <leader>f :ClangFormat<Enter>
 
+Plug 'davidhalter/jedi-vim'
+
+Plug 'kburdett/vim-nuuid'
+
 call plug#end()
 
