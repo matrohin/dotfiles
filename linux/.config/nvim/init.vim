@@ -1,37 +1,47 @@
+" --- general settings ---
 set nocompatible
-
-" --- General settings ---
 set backspace=indent,eol,start
 set ruler
 set number relativenumber
 set showcmd
+set mouse=a
 
-" Search
+" --- search ---
 set incsearch
 set hlsearch
 set ic
 nnoremap <esc> :noh<return><esc>
 vnoremap // y/<C-R>"<CR>
 
-syntax on
-
-set mouse=a
-
-hi clear SignColumn
-
 " --- tabs->spaces ---
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set expandtab
+fun! SetTabSize(param)
+  let &tabstop=a:param
+  let &shiftwidth=a:param
+  let &softtabstop=a:param
+endfun
 
-filetype off                   " required
+call SetTabSize(2)
+set expandtab
 
 " --- tabs ---
 nnoremap <F3> :tabn<Enter>
 nnoremap <F2> :tabp<Enter>
 nnoremap <C-t> :tabe<Enter>
 
+" --- custom colors ---
+set t_Co=256
+hi clear SignColumn
+highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
+
+" --- trailing spaces ---
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+
+" --- plugins ---
+filetype off
 call plug#begin('~/.vim/plugged')
 
 Plug 'ctrlpvim/ctrlp.vim'
@@ -39,6 +49,7 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_show_hidden = 1
+let g:ctrlp_root_markers = ['.root']
 let g:ctrlp_max_files = ''
 let g:ctrlp_max_depth=40
 let g:ctrlp_clear_cache_on_exit = 0
@@ -73,6 +84,7 @@ let NERDTreeDirArrows = 1
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'deoplete-plugins/deoplete-clang'
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#max_list = 20
 set completeopt-=preview
 
 Plug 'ludovicchabant/vim-gutentags'
@@ -88,5 +100,10 @@ Plug 'davidhalter/jedi-vim'
 
 Plug 'kburdett/vim-nuuid'
 
+Plug 'octol/vim-cpp-enhanced-highlight'
+let g:cpp_member_variable_highlight = 1
+
 call plug#end()
 
+filetype plugin indent on
+syntax on
