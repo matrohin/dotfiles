@@ -40,20 +40,13 @@ highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Re
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 
+" --- tags ---
+nnoremap <A-[> :pop<CR>
+nnoremap <A-]> <C-]>
+
 " --- plugins ---
 filetype off
 call plug#begin('~/.vim/plugged')
-
-Plug 'ctrlpvim/ctrlp.vim'
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_show_hidden = 1
-let g:ctrlp_root_markers = ['.root']
-let g:ctrlp_max_files = ''
-let g:ctrlp_max_depth=40
-let g:ctrlp_clear_cache_on_exit = 0
-nnoremap <C-l> :CtrlPTag<CR>
 
 Plug 'itchyny/lightline.vim'
 set noshowmode
@@ -102,6 +95,12 @@ Plug 'kburdett/vim-nuuid'
 
 Plug 'octol/vim-cpp-enhanced-highlight'
 let g:cpp_member_variable_highlight = 1
+
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+nnoremap <A-f> :Files<CR>
+nnoremap <A-t> :Tags<CR>
 
 call plug#end()
 

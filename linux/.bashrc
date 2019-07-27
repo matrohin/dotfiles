@@ -20,3 +20,5 @@ for file in ~/.config/bash/{prompt,aliases}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 
+alias fzf=~/.fzf/bin/fzf
+
