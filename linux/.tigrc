@@ -1,3 +1,3 @@
 bind status R !rm %(file)
-bind status <F3> !git difftool %(commit) -- %(file)
+bind status <F3> !git difftool -y -- %(file)
 
