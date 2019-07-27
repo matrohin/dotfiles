@@ -66,6 +66,8 @@ Plug 'edkolev/tmuxline.vim'
 let g:tmuxline_powerline_separators = 0
 
 Plug 'KabbAmine/zeavim.vim'
+" Uncomment in WSL
+" let g:zv_zeal_executable = '/mnt/c/Program Files/Zeal/zeal.exe'
 
 Plug 'vim-scripts/The-NERD-tree'
 nnoremap <leader>t :NERDTreeToggle<Enter>
@@ -75,7 +77,6 @@ let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'deoplete-plugins/deoplete-clang'
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#max_list = 20
 set completeopt-=preview
@@ -89,18 +90,24 @@ Plug 'rhysd/vim-clang-format'
 nnoremap <leader>f :ClangFormat<Enter>
 vnoremap <leader>f :ClangFormat<Enter>
 
-Plug 'davidhalter/jedi-vim'
-
 Plug 'kburdett/vim-nuuid'
-
-Plug 'octol/vim-cpp-enhanced-highlight'
-let g:cpp_member_variable_highlight = 1
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 nnoremap <A-f> :Files<CR>
 nnoremap <A-t> :Tags<CR>
+
+" --- cpp ---
+Plug 'deoplete-plugins/deoplete-clang'
+Plug 'octol/vim-cpp-enhanced-highlight'
+let g:cpp_member_variable_highlight = 1
+
+" --- python ---
+Plug 'davidhalter/jedi-vim'
+
+" --- rust ---
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
