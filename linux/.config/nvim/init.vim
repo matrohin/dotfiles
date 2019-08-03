@@ -40,6 +40,16 @@ highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Re
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 
+" --- :make settings ---
+fun! EnableMsBuild(sln)
+  let &errorformat='%f(%l): %t%.%# %.%n: %m'
+  let &makeprg='msbuild.sh ' . a:sln
+endfun
+
+nnoremap <leader>e :copen<CR>
+nnoremap <leader>E :cclose<CR>
+nnoremap <F7> :Neomake!<CR>
+
 " --- tags ---
 nnoremap <A-[> :pop<CR>
 nnoremap <A-]> <C-]>
@@ -52,15 +62,23 @@ Plug 'itchyny/lightline.vim'
 set noshowmode
 " Replace filename component of Lightline statusline
 let g:lightline = {
+  \ 'active': {
+  \   'left': [ [ 'mode', 'paste' ],
+  \             [ 'readonly', 'filename', 'modified', 'neomake' ] ]
+  \ },
   \ 'component_function': {
-  \   'filename': 'FilenameForLightline'
+  \   'filename': 'FilenameForLightline',
+  \   'neomake': 'NeomakeStatus'
   \ }
   \ }
 
-" Show full path of filename
-function! FilenameForLightline()
+fun! FilenameForLightline()
   return expand('%')
-endfunction
+endfun
+
+fun! NeomakeStatus()
+  return neomake#statusline#get(g:actual_curbuf)
+endfun
 
 Plug 'edkolev/tmuxline.vim'
 let g:tmuxline_powerline_separators = 0
@@ -92,11 +110,15 @@ vnoremap <leader>f :ClangFormat<Enter>
 
 Plug 'kburdett/vim-nuuid'
 
+Plug 'neomake/neomake'
+let g:neomake_open_list = 2
+
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 nnoremap <A-f> :Files<CR>
 nnoremap <A-t> :Tags<CR>
+nnoremap <A-r> :Rg 
 
 " --- preview fzf commands Files and Rg ---
 command! -bang -nargs=? -complete=dir Files
