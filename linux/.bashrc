@@ -2,6 +2,9 @@
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
 
+# Enable vi mode on Escape
+set -o vi
+
 # append to the history file, don't overwrite it
 shopt -s histappend
 
