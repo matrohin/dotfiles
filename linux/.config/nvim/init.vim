@@ -9,7 +9,8 @@ set mouse=a
 " --- search ---
 set incsearch
 set hlsearch
-set ic
+set ignorecase
+set smartcase
 nnoremap <esc> :noh<return><esc>
 vnoremap // y/<C-R>"<CR>
 
@@ -119,6 +120,7 @@ Plug 'junegunn/fzf.vim'
 nnoremap <A-f> :Files<CR>
 nnoremap <A-t> :Tags<CR>
 nnoremap <A-r> :Rg 
+vnoremap <A-r> y:Rg <C-R>"<CR>
 
 " --- preview fzf commands Files and Rg ---
 command! -bang -nargs=? -complete=dir Files
