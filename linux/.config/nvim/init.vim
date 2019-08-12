@@ -55,6 +55,10 @@ nnoremap <F7> :Neomake!<CR>
 nnoremap <A-[> :pop<CR>
 nnoremap <A-]> <C-]>
 
+" --- copy bindings ---
+noremap <leader>y "+y
+noremap <leader>p "+p
+
 " --- plugins ---
 filetype off
 call plug#begin('~/.vim/plugged')
