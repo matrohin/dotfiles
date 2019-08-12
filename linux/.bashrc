@@ -19,7 +19,7 @@ shopt -s checkwinsize
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-PATH=$PATH:~/scripts
+PATH=$PATH:~/.scripts
 
 for file in ~/.config/bash/{prompt,aliases,external}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file";
