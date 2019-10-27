@@ -6,3 +6,4 @@ alias mc='. /usr/share/mc/bin/mc-wrapper.sh'
 
 alias fzfp="fzf --preview='bat --style=numbers --color=always {}'"
 
+alias vim=nvim
