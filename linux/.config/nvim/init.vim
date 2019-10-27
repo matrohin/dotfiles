@@ -59,6 +59,10 @@ nnoremap <A-]> <C-]>
 noremap <leader>y "+y
 noremap <leader>p "+p
 
+" --- permanent undo ---
+set undodir=~/.vimdid
+set undofile
+
 " --- plugins ---
 filetype off
 call plug#begin('~/.vim/plugged')
@@ -144,9 +148,6 @@ let g:cpp_member_variable_highlight = 1
 
 " --- python ---
 Plug 'davidhalter/jedi-vim'
-
-" --- rust ---
-Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
