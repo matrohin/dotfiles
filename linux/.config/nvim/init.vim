@@ -127,6 +127,7 @@ Plug 'junegunn/fzf.vim'
 
 nnoremap <A-f> :Files<CR>
 nnoremap <A-t> :Tags<CR>
+nnoremap <A-b> :Buffers<CR>
 nnoremap <A-r> :Rg 
 vnoremap <A-r> y:Rg "<C-R>""<CR>
 
