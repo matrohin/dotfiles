@@ -63,6 +63,9 @@ noremap <leader>p "+p
 set undodir=~/.vimdid
 set undofile
 
+" --- complete by Ctrl-E shortcut
+inoremap <C-e> <C-n>
+
 " --- plugins ---
 filetype off
 call plug#begin('~/.vim/plugged')
