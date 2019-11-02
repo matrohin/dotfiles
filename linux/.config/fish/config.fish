@@ -2,8 +2,8 @@
 
 abbr -a e nvim
 abbr -a vim nvim
-abbr -a g git
-abbr -a gf git fetch
+abbr -a ls exa
+abbr -a cat bat
 
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 
