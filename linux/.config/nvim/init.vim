@@ -66,6 +66,9 @@ set undofile
 " --- complete by Ctrl-E shortcut
 inoremap <C-e> <C-n>
 
+" --- russian keymap ---
+set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
+
 " --- plugins ---
 filetype off
 call plug#begin('~/.vim/plugged')
