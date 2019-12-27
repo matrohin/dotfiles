@@ -38,8 +38,8 @@ highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Re
 highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
 
 " --- trailing spaces ---
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
+set listchars=tab:>-,trail:~,extends:>,precedes:<
+set list
 
 " --- :make settings ---
 fun! EnableMsBuild(sln)
