@@ -29,6 +29,9 @@ nnoremap <F3> :tabn<Enter>
 nnoremap <F2> :tabp<Enter>
 nnoremap <C-t> :tabe<Enter>
 
+" --- do not indent namespaces ---
+set cino=N-s
+
 " --- custom colors ---
 set t_Co=256
 hi clear SignColumn
