@@ -156,8 +156,25 @@ Plug 'deoplete-plugins/deoplete-clang'
 Plug 'octol/vim-cpp-enhanced-highlight'
 let g:cpp_member_variable_highlight = 1
 
-" --- python ---
-Plug 'davidhalter/jedi-vim'
+" --- LSP ---
+Plug 'autozimu/LanguageClient-neovim', {
+  \ 'branch': 'next',
+  \ 'do': 'bash install.sh',
+  \ }
+
+set hidden
+
+let g:LanguageClient_serverCommands = {
+  \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+  \ }
+
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F5> :call LanguageClient#textDocument_rename()<CR>
+let g:LanguageClient_diagnosticsEnable = 0
+
+Plug 'rust-lang/rust.vim'
+let g:rustfmt_autosave = 1
 
 call plug#end()
 
