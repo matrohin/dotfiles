@@ -46,7 +46,7 @@ set list
 
 " --- :make settings ---
 fun! EnableMsBuild(sln)
-  let &errorformat='%f(%l): %t%.%# %.%n: %m'
+  let &errorformat='%f(%l%.%#): %t%.%# %.%n: %m'
   let &makeprg='msbuild.sh ' . a:sln
 endfun
 
@@ -68,9 +68,15 @@ set undofile
 
 " --- complete by Ctrl-E shortcut
 inoremap <C-e> <C-n>
+" --- number of items in completion window
+set pumheight=20
 
 " --- russian keymap ---
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
+
+" --- save/quit shortcuts
+nnoremap <leader>w :w<CR>
+nnoremap <leader>q :q<CR>
 
 " --- plugins ---
 filetype off
@@ -82,11 +88,10 @@ set noshowmode
 let g:lightline = {
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ],
-  \             [ 'readonly', 'filename', 'modified', 'neomake' ] ]
+  \             [ 'readonly', 'filename', 'modified' ] ]
   \ },
   \ 'component_function': {
-  \   'filename': 'FilenameForLightline',
-  \   'neomake': 'NeomakeStatus'
+  \   'filename': 'FilenameForLightline'
   \ }
   \ }
 
@@ -94,16 +99,8 @@ fun! FilenameForLightline()
   return expand('%')
 endfun
 
-fun! NeomakeStatus()
-  return neomake#statusline#get(g:actual_curbuf)
-endfun
-
 Plug 'edkolev/tmuxline.vim'
 let g:tmuxline_powerline_separators = 0
-
-Plug 'KabbAmine/zeavim.vim'
-" Uncomment in WSL
-" let g:zv_zeal_executable = '/mnt/c/Program Files/Zeal/zeal.exe'
 
 Plug 'vim-scripts/The-NERD-tree'
 nnoremap <leader>t :NERDTreeToggle<Enter>
@@ -114,8 +111,6 @@ let NERDTreeDirArrows = 1
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#max_list = 20
-set completeopt-=preview
 
 Plug 'ludovicchabant/vim-gutentags'
 let g:gutentags_project_root = ['.root']
@@ -128,9 +123,6 @@ vnoremap <leader>f :ClangFormat<Enter>
 
 Plug 'kburdett/vim-nuuid'
 
-Plug 'neomake/neomake'
-let g:neomake_open_list = 2
-
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
@@ -139,6 +131,7 @@ nnoremap <A-t> :Tags<CR>
 nnoremap <A-b> :Buffers<CR>
 nnoremap <A-r> :Rg 
 vnoremap <A-r> y:Rg "<C-R>""<CR>
+vnoremap <A-R> y:Rg <C-R>"
 
 " --- preview fzf commands Files and Rg ---
 command! -bang -nargs=? -complete=dir Files
