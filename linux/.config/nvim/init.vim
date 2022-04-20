@@ -21,7 +21,7 @@ fun! SetTabSize(param)
   let &softtabstop=a:param
 endfun
 
-call SetTabSize(2)
+call SetTabSize(4)
 set expandtab
 
 " --- tabs ---
@@ -43,12 +43,6 @@ highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Re
 " --- trailing spaces ---
 set listchars=tab:>-,trail:~,extends:>,precedes:<
 set list
-
-" --- :make settings ---
-fun! EnableMsBuild(sln)
-  let &errorformat='%f(%l%.%#): %t%.%# %.%n: %m'
-  let &makeprg='msbuild.sh ' . a:sln
-endfun
 
 nnoremap <leader>e :copen<CR>
 nnoremap <leader>E :cclose<CR>
@@ -148,26 +142,6 @@ command! -bang -nargs=* Rg
 Plug 'deoplete-plugins/deoplete-clang'
 Plug 'octol/vim-cpp-enhanced-highlight'
 let g:cpp_member_variable_highlight = 1
-
-" --- LSP ---
-Plug 'autozimu/LanguageClient-neovim', {
-  \ 'branch': 'next',
-  \ 'do': 'bash install.sh',
-  \ }
-
-set hidden
-
-let g:LanguageClient_serverCommands = {
-  \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-  \ }
-
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> <F5> :call LanguageClient#textDocument_rename()<CR>
-let g:LanguageClient_diagnosticsEnable = 0
-
-Plug 'rust-lang/rust.vim'
-let g:rustfmt_autosave = 1
 
 call plug#end()
 
