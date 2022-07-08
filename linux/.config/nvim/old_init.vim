@@ -21,7 +21,7 @@ fun! SetTabSize(param)
   let &softtabstop=a:param
 endfun
 
-call SetTabSize(2)
+call SetTabSize(4)
 set expandtab
 
 " --- tabs ---
@@ -53,6 +53,9 @@ endfun
 nnoremap <leader>e :copen<CR>
 nnoremap <leader>E :cclose<CR>
 nnoremap <F7> :Neomake!<CR>
+
+" --- doxygen ---
+nnoremap <leader>d ggO/// @file <Esc>:put=expand('%:t')<CR>kJo/ 
 
 " --- tags ---
 nnoremap <A-[> :pop<CR>
@@ -120,6 +123,7 @@ Plug 'vim-scripts/a.vim'
 Plug 'rhysd/vim-clang-format'
 nnoremap <leader>f :ClangFormat<Enter>
 vnoremap <leader>f :ClangFormat<Enter>
+nnoremap <leader>F :ClangFormatAutoToggle<Enter>
 
 Plug 'kburdett/vim-nuuid'
 
@@ -168,6 +172,13 @@ let g:LanguageClient_diagnosticsEnable = 0
 
 Plug 'rust-lang/rust.vim'
 let g:rustfmt_autosave = 1
+
+" Python
+
+Plug 'deoplete-plugins/deoplete-jedi'
+
+" Black(Python) format the visual selection: https://github.com/psf/black/issues/1352
+xnoremap <Leader>k :!black --skip-string-normalization -l 120 -q -<CR>
 
 call plug#end()
 

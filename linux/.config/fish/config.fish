@@ -9,6 +9,12 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 
 set -g fish_prompt_pwd_dir_length 3
 
+source $HOME/.cargo/env
+
+for f in $HOME/.config/fish/private/*
+  source $f
+end
+
 function fish_prompt
   set_color a86f06
   echo -n (prompt_pwd)
