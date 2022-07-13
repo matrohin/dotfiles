@@ -105,12 +105,10 @@ endfun
 Plug 'edkolev/tmuxline.vim'
 let g:tmuxline_powerline_separators = 0
 
-Plug 'vim-scripts/The-NERD-tree'
-nnoremap <leader>t :NERDTreeToggle<Enter>
-nnoremap <leader>T :NERDTreeFind<Enter>
-let NERDTreeQuitOnOpen = 1
-let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'kyazdani42/nvim-tree.lua'
+nnoremap <leader>t :NvimTreeToggle<Enter>
+nnoremap <leader>T :NvimTreeFindFile<Enter>
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 let g:deoplete#enable_at_startup = 1
@@ -152,6 +150,8 @@ command! -bang -nargs=* Rg
 Plug 'deoplete-plugins/deoplete-clang'
 Plug 'octol/vim-cpp-enhanced-highlight'
 let g:cpp_member_variable_highlight = 1
+
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " --- LSP ---
 Plug 'autozimu/LanguageClient-neovim', {
