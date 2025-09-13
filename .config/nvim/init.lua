@@ -62,6 +62,10 @@ vim.keymap.set('n', '<leader>T', ':Explore .<CR>')
 vim.keymap.set('n', '<F2>', ':bprev<CR>')
 vim.keymap.set('n', '<F3>', ':bnext<CR>')
 
+--- Formatting (requires formatprg to be set up) ---
+vim.keymap.set('v', '<leader>f', 'gq')
+vim.keymap.set('n', '<leader>F', 'gggqG')
+
 --- PLUGINS ---
 
 local Plug = vim.fn['plug#']
@@ -86,6 +90,7 @@ vim.keymap.set('n', '<A-F>', ':Telescope find_files hidden=true<CR>')
 vim.keymap.set('n', '<A-t>', ':Telescope tags<CR>')
 vim.keymap.set('n', '<A-b>', ':Telescope buffers<CR>')
 vim.keymap.set('n', '<A-h>', ':Telescope help_tags<CR>')
+vim.keymap.set('n', '<A-m>', ':Telescope marks<CR>')
 vim.keymap.set('n', '<A-R>', ':Telescope live_grep<CR>')
 vim.keymap.set('n', '<A-r>', ':Telescope grep_string search=')
 vim.keymap.set('v', '<A-r>', 'y:Telescope grep_string search=<C-R>"<CR>')
