@@ -55,8 +55,7 @@ vim.keymap.set('n', '<A-]>', '<C-]>')
 vim.keymap.set('n', '<A-[>', ':pop<CR>')
 
 --- Basic file explorer ---
-vim.keymap.set('n', '<leader>t', ':Explore<CR>')
-vim.keymap.set('n', '<leader>T', ':Explore .<CR>')
+vim.keymap.set('n', '<leader>t', ':Oil<CR>')
 
 --- Quickly go to prev/next buffer ---
 vim.keymap.set('n', '<F2>', ':bprev<CR>')
@@ -74,9 +73,12 @@ vim.call('plug#begin')
 Plug('vim-scripts/a.vim')
 Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate', ['branch'] = 'master' })
 Plug('nvim-lua/plenary.nvim')
+Plug('nordtheme/vim')
 Plug('nvim-telescope/telescope.nvim', { ['tag'] = '0.1.8' })
 Plug('nvim-telescope/telescope-fzf-native.nvim',
   { ['do'] = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' })
+
+Plug('stevearc/oil.nvim')
 
 vim.call('plug#end')
 
@@ -88,7 +90,7 @@ require('telescope').load_extension('fzf')
 vim.keymap.set('n', '<A-f>', ':Telescope find_files<CR>')
 vim.keymap.set('n', '<A-F>', ':Telescope find_files hidden=true<CR>')
 vim.keymap.set('n', '<A-t>', ':Telescope tags<CR>')
-vim.keymap.set('n', '<A-b>', ':Telescope buffers<CR>')
+vim.keymap.set('n', '<A-b>', ':Telescope buffers sort_mru=true ignore_current_buffer=true<CR> ')
 vim.keymap.set('n', '<A-h>', ':Telescope help_tags<CR>')
 vim.keymap.set('n', '<A-m>', ':Telescope marks<CR>')
 vim.keymap.set('n', '<A-R>', ':Telescope live_grep<CR>')
@@ -132,7 +134,15 @@ require('nvim-treesitter.configs').setup {
   }
 }
 
-vim.cmd('colorscheme slate')
-vim.cmd('hi MatchParen guibg=bg guifg=SlateBlue')
-vim.cmd('hi ModeMsg guibg=bg guifg=fg')
-vim.cmd('hi Visual guibg=#1e5b47')
+-- Oil (file explorer)
+require("oil").setup({
+  default_file_explorer = true,
+  columns = {
+    "size"
+  },
+  view_options = {
+    show_hidden = true
+  }
+})
+
+vim.cmd('colorscheme nord')
