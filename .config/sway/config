@@ -1,0 +1,119 @@
+### Variables
+set $mod Mod4
+set $left h
+set $down j
+set $up k
+set $right l
+set $term alacritty
+set $browser brave
+set $fileManager dolphin
+set $menu rofi -show drun
+set $menu_all rofi -show run
+
+### Autostart
+exec_always dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+exec_always systemctl --user set-environment QT_QPA_PLATFORM=wayland QT_QPA_PLATFORMTHEME=qt6ct XDG_MENU_PREFIX=arch- XCURSOR_SIZE=24
+exec /usr/lib/polkit-kde-authentication-agent-1
+exec ~/utils/rand_wallpaper_sway.sh
+exec kbuildsycoca6
+exec dunst
+
+### Input
+input type:keyboard {
+    xkb_layout us,ru
+    xkb_options grp:caps_toggle
+}
+
+input type:touchpad {
+    natural_scroll disabled
+}
+
+focus_follows_mouse yes
+
+### Appearance
+gaps inner 2
+gaps outer 2
+default_border pixel 2
+
+client.focused          #33ccff #33ccff #ffffff #33ccff #33ccff
+client.unfocused        #595959 #595959 #888888 #595959 #595959
+
+### Floating modifier (LMB drag, RMB resize)
+floating_modifier $mod normal
+
+### Keybindings — applications
+bindsym $mod+q exec $term
+bindsym $mod+Tab exec prock
+bindsym $mod+b exec $browser
+bindsym $mod+c kill
+bindsym $mod+d kill
+bindsym $mod+m exec ~/utils/power_menu.sh
+bindsym $mod+e exec $fileManager
+bindsym $mod+r exec $menu
+bindsym $mod+Shift+r exec $menu_all
+bindsym $mod+w exec ~/utils/rand_wallpaper_sway.sh
+
+### Keybindings — layout
+bindsym $mod+f floating toggle
+bindsym $mod+backslash splith
+bindsym $mod+v splitv
+
+### Keybindings — focus
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+### Keybindings — workspaces
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+### Keybindings — scratchpad
+bindsym $mod+Shift+s move scratchpad
+bindsym $mod+s scratchpad show
+
+### Keybindings — scroll workspaces
+bindsym $mod+button5 workspace next
+bindsym $mod+button4 workspace prev
+
+### Keybindings — screenshots & recording
+bindsym Print exec grim -g "$(slurp)" - | wl-copy
+bindsym ctrl+Print exec sh -c 'if pgrep -x wf-recorder; then pkill wf-recorder; else wf-recorder -f ~/Videos/recording_$(date +%Y%m%d_%H%M%S).mp4; fi'
+
+### Keybindings — media & brightness
+bindsym XF86AudioRaiseVolume exec wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+
+bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+bindsym XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+### Keybindings — sway
+bindsym $mod+Shift+c reload
+
+### Bar
+exec_always pkill -x waybar; waybar
+
+include /etc/sway/config.d/*

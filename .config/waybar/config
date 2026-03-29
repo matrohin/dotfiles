@@ -1,0 +1,82 @@
+{
+    "position": "right",
+    "width": 38,
+    "spacing": 4,
+    "margin-top": 2,
+    "margin-bottom": 2,
+    "margin-right": 2,
+    "modules-left": ["sway/workspaces"],
+    "modules-center": [],
+    "modules-right": ["pulseaudio", "bluetooth", "network", "cpu", "memory", "sway/language", "clock", "custom/powermenu"],
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "10": "0",
+            "default": ""
+        }
+    },
+    "custom/powermenu": {
+        "format": "⏻",
+        "tooltip": "Power menu",
+        "on-click": "~/utils/power_menu.sh"
+    },
+    "sway/language": {
+        "format": "󰌌 {}",
+        "format-en": "EN",
+        "format-ru": "RU"
+    },
+    "clock": {
+        "interval": 60,
+        "timezone": "Europe/Berlin",
+        "format": "{:%H:%M}",
+        "tooltip-format": "<big>{:%Y %B %d}</big>\n<tt>{calendar}</tt>"
+    },
+    "cpu": {
+        "interval": 5,
+        "format": "󰻠 {usage}%",
+        "tooltip-format": "CPU: {usage}%\n{avg_frequency} GHz"
+    },
+    "memory": {
+        "interval": 5,
+        "format": "󰍛 {percentage}%",
+        "tooltip-format": "RAM: {used:0.1f}GB / {total:0.1f}GB"
+    },
+    "network": {
+        "interval": 5,
+        "format-wifi": "󰤨 {signalStrength}%",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰤭",
+        "tooltip-format-wifi": "{essid}\n{ipaddr}",
+        "tooltip-format-ethernet": "{ifname}\n{ipaddr}",
+        "tooltip-format-disconnected": "Disconnected"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟",
+        "format-icons": {
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "tooltip-format": "Volume: {volume}%\n{desc}",
+        "on-click": "pavucontrol"
+    },
+    "bluetooth": {
+        "format": "󰂯",
+        "format-connected": "󰂱 {num_connections}",
+        "format-disabled": "󰂲",
+        "tooltip-format": "{controller_alias}\t{controller_address}",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "on-click": "blueman-manager"
+    }
+}

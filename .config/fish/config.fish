@@ -1,7 +1,6 @@
 #!/usr/bin/fish
 
-abbr -a e nvim.exe
-abbr -a cat bat
+abbr -a e nvim
 abbr -a ls exa
 
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
