@@ -8,7 +8,7 @@ set $term alacritty
 set $browser brave
 set $fileManager dolphin
 set $menu fuzzel
-set $menu_all fuzzel
+set $menu_all bash -c 'compgen -c | sort -u | fuzzel --dmenu | xargs swaymsg exec --'
 
 ### Autostart
 exec_always dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
@@ -63,6 +63,29 @@ bindsym $mod+$left focus left
 bindsym $mod+$down focus down
 bindsym $mod+$up focus up
 bindsym $mod+$right focus right
+
+### Keybindings — move
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+### Resize mode
+mode "resize" {
+    bindsym $left  resize shrink width  20px
+    bindsym $right resize grow   width  20px
+    bindsym $up    resize shrink height 20px
+    bindsym $down  resize grow   height 20px
+
+    bindsym Shift+$left  resize shrink width  5px
+    bindsym Shift+$right resize grow   width  5px
+    bindsym Shift+$up    resize shrink height 5px
+    bindsym Shift+$down  resize grow   height 5px
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+ctrl+r mode "resize"
 
 ### Keybindings — workspaces
 bindsym $mod+1 workspace number 1
