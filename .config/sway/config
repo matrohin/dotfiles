@@ -7,8 +7,8 @@ set $right l
 set $term alacritty
 set $browser brave
 set $fileManager dolphin
-set $menu rofi -show drun
-set $menu_all rofi -show run
+set $menu fuzzel
+set $menu_all fuzzel
 
 ### Autostart
 exec_always dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
@@ -114,6 +114,6 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+Shift+c reload
 
 ### Bar
-exec_always pkill -x waybar; waybar
+exec_always sh -c 'pkill -x waybar; waybar'
 
 include /etc/sway/config.d/*
