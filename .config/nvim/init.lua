@@ -73,7 +73,8 @@ vim.call('plug#begin')
 Plug('vim-scripts/a.vim')
 Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate', ['branch'] = 'master' })
 Plug('nvim-lua/plenary.nvim')
-Plug('nordtheme/vim')
+Plug('rmehri01/onenord.nvim', { ['branch'] = 'main' })
+Plug('sindrets/diffview.nvim')
 Plug('nvim-telescope/telescope.nvim', { ['tag'] = '0.1.8' })
 Plug('nvim-telescope/telescope-fzf-native.nvim',
   { ['do'] = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' })
@@ -145,4 +146,4 @@ require("oil").setup({
   }
 })
 
-vim.cmd('colorscheme nord')
+vim.cmd('colorscheme onenord')
