@@ -71,11 +71,11 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin')
 
 Plug('vim-scripts/a.vim')
-Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate', ['branch'] = 'master' })
+Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate', ['branch'] = 'main' })
 Plug('nvim-lua/plenary.nvim')
 Plug('rmehri01/onenord.nvim', { ['branch'] = 'main' })
 Plug('sindrets/diffview.nvim')
-Plug('nvim-telescope/telescope.nvim', { ['tag'] = '0.1.8' })
+Plug('nvim-telescope/telescope.nvim', { ['tag'] = 'v0.2.2' })
 Plug('nvim-telescope/telescope-fzf-native.nvim',
   { ['do'] = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' })
 
@@ -129,7 +129,7 @@ require('telescope').setup {
 vim.keymap.set('n', '<A-s>', ':A<CR>')
 
 -- Tree-Sitter (syntax highlighting)
-require('nvim-treesitter.configs').setup {
+require('nvim-treesitter.config').setup {
   highlight = {
     enable = true
   }
