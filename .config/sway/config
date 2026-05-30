@@ -48,6 +48,7 @@ bindsym $mod+b exec $browser
 bindsym $mod+c kill
 bindsym $mod+d kill
 bindsym $mod+m exec ~/utils/power_menu.sh
+bindsym $mod+z exec swaylock -f -c 2e3440
 bindsym $mod+e exec $fileManager
 bindsym $mod+r exec $menu
 bindsym $mod+Shift+r exec $menu_all
