@@ -40,7 +40,20 @@
         "interval": 60,
         "timezone": "Europe/Berlin",
         "format": "{:%H:%M}",
-        "tooltip-format": "<big>{:%Y %B %d}</big>\n<tt>{calendar}</tt>"
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 4,
+            "format": {
+                "months":   "<span color='#88c0d0'><b>{}</b></span>",
+                "weekdays": "<span color='#5e81ac'><b>{}</b></span>",
+                "days":     "<span color='#d8dee9'>{}</span>",
+                "today":    "<span background='#88c0d0' bgalpha='25%' color='#88c0d0'><b>{}</b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode"
+        }
     },
     "network": {
         "interval": 5,
