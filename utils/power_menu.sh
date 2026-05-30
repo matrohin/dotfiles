@@ -3,8 +3,8 @@
 # Options
 options="Shutdown\nRestart\nSuspend\nLogout"
 
-# Launch rofi in dmenu mode
-choice=$(echo -e $options | rofi -dmenu -p "Power")
+# Launch fuzzel in dmenu mode
+choice=$(echo -e $options | fuzzel --dmenu --prompt "Power: ")
 
 # Perform action based on choice
 case "$choice" in
