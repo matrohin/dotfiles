@@ -10,5 +10,5 @@
 - `wpctl` (pipewire), `brightnessctl`, `playerctl` — media/brightness keys
 - `polkit-kde-agent`, `blueman`, `pavucontrol` — system utilities
 - `prock` — custom window switcher binary, install separately
-- `JetBrainsMono Nerd Font` — UI and terminal font
+- `Inconsolata Nerd Font` — UI and terminal font
 - Wallpapers in `~/Pictures/wallpapers/`

@@ -36,7 +36,7 @@
     corner_radius = 0
 
     ### Text ###
-    font = JetBrainsMono Nerd Font 10
+    font = Inconsolata Nerd Font 10
     line_height = 0
     markup = full
     format = "<b>%s</b>\n%b"
