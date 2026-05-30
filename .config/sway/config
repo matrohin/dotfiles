@@ -41,6 +41,9 @@ client.unfocused        #3b4252 #2e3440 #d8dee9 #3b4252 #3b4252
 ### Floating modifier (LMB drag, RMB resize)
 floating_modifier $mod normal
 
+### Window rules
+for_window [title="Prock"] floating enable
+
 ### Keybindings — applications
 bindsym $mod+q exec $term
 bindsym $mod+Tab exec prock
@@ -56,6 +59,7 @@ bindsym $mod+w exec ~/utils/rand_wallpaper_sway.sh
 
 ### Keybindings — layout
 bindsym $mod+f floating toggle
+bindsym $mod+space focus mode_toggle
 bindsym $mod+backslash splith
 bindsym $mod+v splitv
 
