@@ -1,0 +1,46 @@
+# Nord-themed swaylock
+ignore-empty-password
+show-failed-attempts
+scaling=fill
+
+indicator-radius=120
+indicator-thickness=8
+indicator-caps-lock
+
+font=monospace
+
+# Ring around the indicator
+ring-color=4c566a
+ring-clear-color=ebcb8b
+ring-ver-color=88c0d0
+ring-wrong-color=bf616a
+ring-caps-lock-color=d08770
+
+# Inside of the indicator (semi-transparent so the wallpaper shows through)
+inside-color=2e3440cc
+inside-clear-color=2e3440cc
+inside-ver-color=2e3440cc
+inside-wrong-color=2e3440cc
+inside-caps-lock-color=2e3440cc
+
+# Key press / backspace highlight segments
+key-hl-color=88c0d0
+bs-hl-color=bf616a
+caps-lock-key-hl-color=d08770
+caps-lock-bs-hl-color=bf616a
+
+# Hide the separator and the inside/ring divider line
+separator-color=00000000
+line-uses-inside
+
+# Text inside the indicator
+text-color=eceff4
+text-clear-color=eceff4
+text-ver-color=88c0d0
+text-wrong-color=bf616a
+text-caps-lock-color=d08770
+
+# Keyboard layout box
+layout-bg-color=2e3440cc
+layout-border-color=4c566a
+layout-text-color=eceff4
