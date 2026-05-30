@@ -4,3 +4,5 @@ copy /Y .\.config\nvim\init.lua %LOCALAPPDATA%\nvim\init.lua
 
 mkdir %APPDATA%\alacritty
 copy /Y .\.config\alacritty\alacritty.toml %APPDATA%\alacritty\alacritty.toml
+
+copy /Y .\.ideavimrc %USERPROFILE%\.ideavimrc

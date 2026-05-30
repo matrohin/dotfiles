@@ -48,6 +48,9 @@ vim.opt.undofile = true
 vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y')
 vim.keymap.set({ 'n', 'v' }, '<leader>p', '"+p')
 
+--- Marks ---
+vim.keymap.set('n', '<leader>m', ':delm ')
+
 --- Go to definition / Go back ---
 -- Call ctags -R . to generate
 

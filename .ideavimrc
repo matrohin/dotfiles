@@ -1,0 +1,68 @@
+" IdeaVim mirror of ~/.config/nvim/init.lua. Plugins are replaced by native
+" IDE actions. Whitespace display and theme live in IDE settings.
+
+" --- Appearance ---
+
+set number
+set relativenumber
+set showcmd
+set visualbell
+set noerrorbells
+
+" --- Search ---
+
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
+
+nnoremap <esc> :noh<CR><esc>
+vnoremap // y/<C-R>"<CR>
+
+" --- Copy/Paste ---
+
+let mapleader = "\\"
+
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
+nnoremap <leader>p "+p
+vnoremap <leader>p "+p
+
+" --- Navigation ---
+
+nnoremap <A-]> :action GotoDeclaration<CR>
+nnoremap <A-[> :action Back<CR>
+
+nnoremap <leader>t :action SelectInProjectView<CR>
+
+nnoremap <F2> :action PreviousTab<CR>
+nnoremap <F3> :action NextTab<CR>
+
+vnoremap <leader>f :action ReformatCode<CR>
+nnoremap <leader>F :action ReformatCode<CR>
+
+" --- Plugin replacements ---
+
+" Switch .c/.h .cpp/.hpp (a.vim)
+nnoremap <A-s> :action SwitchHeaderSource<CR>
+
+" Telescope
+nnoremap <A-f> :action GotoFile<CR>
+nnoremap <A-t> :action GotoSymbol<CR>
+nnoremap <A-b> :action RecentFiles<CR>
+nnoremap <A-a> :action GotoAction<CR>
+nnoremap <A-m> :action ShowBookmarks<CR>
+nnoremap <leader>m :delm<Space>
+nnoremap <leader>b :action ToggleLineBreakpoint<CR>
+nnoremap <A-R> :action FindInPath<CR>
+nnoremap <A-r> :action FindInPath<CR>
+vnoremap <A-r> :action FindInPath<CR>
+
+" diffview
+nnoremap <leader>d :action Vcs.ShowTabbedFileHistory<CR>
+
+" --- IdeaVim behaviour ---
+
+set ideajoin
+sethandler <A-]> a:vim
+sethandler <A-[> a:vim
