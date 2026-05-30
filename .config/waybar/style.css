@@ -9,14 +9,14 @@ window#waybar {
 }
 
 window#waybar > box {
-    background: rgba(46, 52, 64, 0.95);
+    background: rgba(46, 52, 64, 0.96);
     border: 2px solid rgba(76, 86, 106, 0.6);
     border-radius: 0;
     padding: 4px 2px;
 }
 
 tooltip {
-    background: rgba(46, 52, 64, 0.95);
+    background: rgba(46, 52, 64, 0.96);
     border: 2px solid rgba(136, 192, 208, 0.5);
     border-radius: 0;
 }

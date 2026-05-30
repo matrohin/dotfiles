@@ -146,4 +146,9 @@ require("oil").setup({
   }
 })
 
-vim.cmd('colorscheme onenord')
+require('onenord').setup({
+  disable = {
+    background = true,
+    float_background = true,
+  }
+})

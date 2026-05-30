@@ -1,6 +1,11 @@
 [font]
-normal.family = 'Inconsolata'
+normal.family = 'JetBrainsMono Nerd Font'
 size = 16
+
+[window]
+padding = { x = 0, y = 0 }
+dynamic_padding = true
+opacity = 0.96
 
 # Colors (Nord)
 
