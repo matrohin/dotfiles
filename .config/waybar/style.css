@@ -49,8 +49,8 @@ tooltip label {
 }
 
 #workspaces button.focused {
-    background: linear-gradient(135deg, #88c0d0, #5e81ac);
-    color: #2e3440;
+    background: #5e81ac;
+    color: #eceff4;
     border-radius: 0;
 }
 
@@ -60,8 +60,6 @@ tooltip label {
 }
 
 #clock,
-#cpu,
-#memory,
 #network,
 #bluetooth,
 #language,
@@ -78,8 +76,6 @@ tooltip label {
 
 
 #clock:hover,
-#cpu:hover,
-#memory:hover,
 #network:hover,
 #bluetooth:hover,
 #language:hover,
@@ -94,14 +90,6 @@ tooltip label {
     padding: 4px 4px;
 }
 
-#cpu {
-    color: #bf616a;
-}
-
-#memory {
-    color: #b48ead;
-}
-
 #network {
     color: #81a1c1;
 }
@@ -111,7 +99,7 @@ tooltip label {
 }
 
 #pulseaudio {
-    color: #d08770;
+    color: #88c0d0;
 }
 
 #pulseaudio.muted {
@@ -119,5 +107,5 @@ tooltip label {
 }
 
 #language {
-    color: #ebcb8b;
+    color: #5e81ac;
 }

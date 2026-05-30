@@ -139,5 +139,6 @@ bindsym $mod+Shift+c reload
 
 ### Bar
 exec_always sh -c 'pkill -x waybar; waybar'
+bindsym $mod+Shift+w exec pkill -SIGUSR1 waybar
 
 include /etc/sway/config.d/*
