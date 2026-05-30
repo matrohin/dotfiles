@@ -129,11 +129,12 @@ require('telescope').setup {
 vim.keymap.set('n', '<A-s>', ':A<CR>')
 
 -- Tree-Sitter (syntax highlighting)
-require('nvim-treesitter.config').setup {
-  highlight = {
-    enable = true
-  }
-}
+local parsers = { 'cpp', 'c', 'rust', 'kotlin', 'python', 'markdown', 'lua' }
+require('nvim-treesitter').install(parsers)
+
+vim.api.nvim_create_autocmd('FileType', {
+  callback = function() pcall(vim.treesitter.start) end,
+})
 
 -- Oil (file explorer)
 require("oil").setup({
