@@ -7,7 +7,7 @@
     "margin-right": 2,
     "modules-left": ["sway/workspaces"],
     "modules-center": [],
-    "modules-right": ["pulseaudio", "bluetooth", "network", "sway/language", "clock", "custom/powermenu"],
+    "modules-right": ["pulseaudio", "bluetooth", "network", "battery", "sway/language", "clock", "custom/powermenu"],
     "sway/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
@@ -54,6 +54,18 @@
         "actions": {
             "on-click-right": "mode"
         }
+    },
+    "battery": {
+        "interval": 30,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰚥 {capacity}%",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "tooltip-format": "{capacity}% — {timeTo}"
     },
     "network": {
         "interval": 5,

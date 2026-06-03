@@ -61,6 +61,7 @@ tooltip label {
 
 #clock,
 #network,
+#battery,
 #bluetooth,
 #language,
 #custom-powermenu,
@@ -77,6 +78,7 @@ tooltip label {
 
 #clock:hover,
 #network:hover,
+#battery:hover,
 #bluetooth:hover,
 #language:hover,
 #custom-powermenu:hover,
@@ -92,6 +94,23 @@ tooltip label {
 
 #network {
     color: #81a1c1;
+}
+
+#battery {
+    color: #a3be8c;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: #8fbcbb;
+}
+
+#battery.warning:not(.charging) {
+    color: #ebcb8b;
+}
+
+#battery.critical:not(.charging) {
+    color: #bf616a;
 }
 
 #network.disconnected {
