@@ -65,7 +65,7 @@ tooltip label {
 #bluetooth,
 #language,
 #custom-powermenu,
-#pulseaudio {
+#wireplumber {
     background: rgba(59, 66, 82, 0.6);
     color: #d8dee9;
     border-radius: 0;
@@ -82,7 +82,7 @@ tooltip label {
 #bluetooth:hover,
 #language:hover,
 #custom-powermenu:hover,
-#pulseaudio:hover {
+#wireplumber:hover {
     background: rgba(136, 192, 208, 0.3);
 }
 
@@ -117,11 +117,11 @@ tooltip label {
     color: #4c566a;
 }
 
-#pulseaudio {
+#wireplumber {
     color: #88c0d0;
 }
 
-#pulseaudio.muted {
+#wireplumber.muted {
     color: #4c566a;
 }
 

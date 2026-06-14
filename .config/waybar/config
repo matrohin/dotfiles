@@ -7,7 +7,7 @@
     "margin-right": 2,
     "modules-left": ["sway/workspaces"],
     "modules-center": [],
-    "modules-right": ["pulseaudio", "bluetooth", "network", "battery", "sway/language", "clock", "custom/powermenu"],
+    "modules-right": ["wireplumber", "bluetooth", "network", "battery", "sway/language", "clock", "custom/powermenu"],
     "sway/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
@@ -76,13 +76,11 @@
         "tooltip-format-ethernet": "{ifname}\n{ipaddr}",
         "tooltip-format-disconnected": "Disconnected"
     },
-    "pulseaudio": {
+    "wireplumber": {
         "format": "{icon} {volume}%",
         "format-muted": "󰝟",
-        "format-icons": {
-            "default": ["󰕿", "󰖀", "󰕾"]
-        },
-        "tooltip-format": "Volume: {volume}%\n{desc}",
+        "format-icons": ["󰕿", "󰖀", "󰕾"],
+        "tooltip-format": "Volume: {volume}%\n{node_name}",
         "on-click": "pavucontrol",
         "on-scroll-up": "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+",
         "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
