@@ -59,7 +59,7 @@ bindsym $mod+w exec ~/utils/rand_wallpaper_sway.sh
 
 ### Keybindings — layout
 bindsym $mod+f floating toggle
-bindsym $mod+space focus mode_toggle
+bindsym $mod+Escape focus mode_toggle
 bindsym $mod+backslash splith
 bindsym $mod+v splitv
 
@@ -125,6 +125,7 @@ bindsym $mod+button4 workspace prev
 
 ### Keybindings — screenshots & recording
 bindsym Print exec grim -g "$(slurp)" - | wl-copy
+bindsym $mod+Print exec ~/utils/shot-area.sh
 bindsym ctrl+Print exec sh -c 'if pgrep -x wf-recorder; then pkill wf-recorder; else wf-recorder -f ~/Videos/recording_$(date +%Y%m%d_%H%M%S).mp4; fi'
 
 ### Keybindings — media & brightness
