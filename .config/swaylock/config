@@ -7,7 +7,7 @@ indicator-radius=120
 indicator-thickness=8
 indicator-caps-lock
 
-font=monospace
+font=Inconsolata Nerd Font
 
 # Ring around the indicator
 ring-color=4c566a
