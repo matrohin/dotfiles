@@ -62,7 +62,7 @@
     history_length = 20
 
     ### Misc/Advanced ###
-    dmenu = /usr/bin/dmenu -p dunst:
+    dmenu = /usr/bin/fuzzel --dmenu --prompt "dunst: "
     browser = /usr/bin/xdg-open
     always_run_script = true
     title = Dunst
@@ -97,17 +97,6 @@
     icon = dialog-warning
 
 ### Custom rules ###
-
-[spotify]
-    appname = Spotify
-    urgency = low
-    frame_color = "#a3be8c"
-    timeout = 5
-
-[discord]
-    appname = discord
-    urgency = normal
-    frame_color = "#81a1c1"
 
 [volume]
     summary = "Volume*"
