@@ -14,7 +14,7 @@ set $menu_all bash -c 'compgen -c | sort -u | fuzzel --dmenu | xargs swaymsg exe
 exec_always dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 exec_always systemctl --user set-environment QT_QPA_PLATFORM=wayland QT_QPA_PLATFORMTHEME=qt6ct XDG_MENU_PREFIX=arch- XCURSOR_SIZE=24
 exec /usr/lib/polkit-kde-authentication-agent-1
-exec ~/utils/rand_wallpaper_sway.sh
+exec_always ~/utils/rand_wallpaper_sway.sh
 exec kbuildsycoca6
 exec dunst
 
