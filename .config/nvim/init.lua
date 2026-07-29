@@ -89,8 +89,6 @@ vim.call('plug#end')
 --- PLUGINS SETTINGS
 
 -- Telescope
-require('telescope').load_extension('fzf')
-
 vim.keymap.set('n', '<A-f>', ':Telescope find_files<CR>')
 vim.keymap.set('n', '<A-F>', ':Telescope find_files hidden=true<CR>')
 vim.keymap.set('n', '<A-t>', ':Telescope tags<CR>')
@@ -126,6 +124,8 @@ require('telescope').setup {
     }
   }
 }
+
+require('telescope').load_extension('fzf')
 
 
 -- Switch between .c/.h .cpp/.hpp
