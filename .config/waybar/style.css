@@ -8,16 +8,16 @@ window#waybar {
     background: transparent;
 }
 
+/* Frameless; opacity lets the wallpaper through so the bar tracks it */
 window#waybar > box {
-    background: rgba(46, 52, 64, 0.96);
-    border: 2px solid rgba(76, 86, 106, 0.6);
+    background: rgba(46, 52, 64, 0.85);
     border-radius: 0;
     padding: 4px 2px;
 }
 
 tooltip {
     background: rgba(46, 52, 64, 0.96);
-    border: 2px solid rgba(136, 192, 208, 0.5);
+    border: 2px solid rgba(76, 86, 106, 0.6);
     border-radius: 0;
 }
 
@@ -44,12 +44,12 @@ tooltip label {
 }
 
 #workspaces button:hover {
-    background: rgba(136, 192, 208, 0.2);
-    color: #88c0d0;
+    background: rgba(76, 86, 106, 0.35);
+    color: #d8dee9;
 }
 
 #workspaces button.focused {
-    background: #5e81ac;
+    background: #4c566a;
     color: #eceff4;
     border-radius: 0;
 }
@@ -59,6 +59,7 @@ tooltip label {
     color: #2e3440;
 }
 
+/* Modules rest at nord4; colour below is reserved for state */
 #clock,
 #network,
 #battery,
@@ -66,15 +67,13 @@ tooltip label {
 #language,
 #custom-powermenu,
 #wireplumber {
-    background: rgba(59, 66, 82, 0.6);
+    background: transparent;
     color: #d8dee9;
     border-radius: 0;
     padding: 4px 4px;
     margin: 4px 4px;
     transition: all 0.2s ease;
 }
-
-
 
 #clock:hover,
 #network:hover,
@@ -83,21 +82,16 @@ tooltip label {
 #language:hover,
 #custom-powermenu:hover,
 #wireplumber:hover {
-    background: rgba(136, 192, 208, 0.3);
+    background: rgba(76, 86, 106, 0.35);
 }
 
 #clock {
-    color: #8fbcbb;
     font-size: 13px;
-    padding: 4px 4px;
 }
 
-#network {
-    color: #81a1c1;
-}
-
+/* Battery rests neutral like every other module; colour marks state only */
 #battery {
-    color: #a3be8c;
+    color: #d8dee9;
 }
 
 #battery.charging,
@@ -117,14 +111,6 @@ tooltip label {
     color: #4c566a;
 }
 
-#wireplumber {
-    color: #88c0d0;
-}
-
 #wireplumber.muted {
     color: #4c566a;
-}
-
-#language {
-    color: #5e81ac;
 }

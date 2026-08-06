@@ -29,7 +29,7 @@
     horizontal_padding = 15
     text_icon_padding = 0
     frame_width = 1
-    frame_color = "#88c0d0"
+    frame_color = "#4c566a"
     gap_size = 8
     separator_color = frame
 
@@ -78,14 +78,14 @@
 [urgency_low]
     background = "#2e3440"
     foreground = "#d8dee9"
-    frame_color = "#88c0d0"
+    frame_color = "#4c566a"
     timeout = 4
     icon = dialog-information
 
 [urgency_normal]
     background = "#3b4252"
     foreground = "#eceff4"
-    frame_color = "#88c0d0"
+    frame_color = "#4c566a"
     timeout = 8
     icon = dialog-information
 
@@ -101,13 +101,13 @@
 [volume]
     summary = "Volume*"
     urgency = low
-    frame_color = "#88c0d0"
+    frame_color = "#4c566a"
     timeout = 2
 
 [brightness]
     summary = "Brightness*"
     urgency = low
-    frame_color = "#ebcb8b"
+    frame_color = "#4c566a"
     timeout = 2
 
 [battery]

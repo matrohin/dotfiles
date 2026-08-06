@@ -8,7 +8,7 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 set -g fish_prompt_pwd_dir_length 3
 
 function fish_right_prompt
-  set_color 5e81ac
+  set_color 4c566a
   echo (prompt_pwd)
   set_color normal
 end
