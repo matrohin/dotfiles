@@ -10,11 +10,11 @@ indicator-caps-lock
 font=Inconsolata Nerd Font
 
 # Ring around the indicator
-ring-color=4c566a
+ring-color=d08770
 ring-clear-color=ebcb8b
-ring-ver-color=88c0d0
+ring-ver-color=a3be8c
 ring-wrong-color=bf616a
-ring-caps-lock-color=d08770
+ring-caps-lock-color=b48ead
 
 # Inside of the indicator (semi-transparent so the wallpaper shows through)
 inside-color=2e3440cc
@@ -24,9 +24,9 @@ inside-wrong-color=2e3440cc
 inside-caps-lock-color=2e3440cc
 
 # Key press / backspace highlight segments
-key-hl-color=88c0d0
+key-hl-color=ebcb8b
 bs-hl-color=bf616a
-caps-lock-key-hl-color=d08770
+caps-lock-key-hl-color=b48ead
 caps-lock-bs-hl-color=bf616a
 
 # Hide the separator and the inside/ring divider line
@@ -36,11 +36,11 @@ line-uses-inside
 # Text inside the indicator
 text-color=eceff4
 text-clear-color=eceff4
-text-ver-color=88c0d0
+text-ver-color=a3be8c
 text-wrong-color=bf616a
-text-caps-lock-color=d08770
+text-caps-lock-color=b48ead
 
 # Keyboard layout box
 layout-bg-color=2e3440cc
-layout-border-color=4c566a
+layout-border-color=d08770
 layout-text-color=eceff4
