@@ -59,6 +59,9 @@ vim.keymap.set('n', '<leader>m', ':delm ')
 vim.keymap.set('n', '<A-]>', '<C-]>')
 vim.keymap.set('n', '<A-[>', ':pop<CR>')
 
+vim.keymap.set('n', '<leader>g', '<C-]>')
+vim.keymap.set('n', '<leader>G', ':pop<CR>')
+
 --- Basic file explorer ---
 vim.keymap.set('n', '<leader>t', ':Oil<CR>')
 

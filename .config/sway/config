@@ -129,9 +129,8 @@ bindsym $mod+button5 workspace next
 bindsym $mod+button4 workspace prev
 
 ### Keybindings — screenshots & recording
-bindsym Print exec grim -g "$(slurp)" - | wl-copy
-bindsym $mod+Print exec ~/utils/shot-area.sh
-bindsym ctrl+Print exec sh -c 'if pgrep -x wf-recorder; then pkill wf-recorder; else wf-recorder -f ~/Videos/recording_$(date +%Y%m%d_%H%M%S).mp4; fi'
+bindsym $mod+p exec grim -g "$(slurp)" - | wl-copy
+bindsym $mod+Shift+p exec ~/utils/shot-area.sh
 
 ### Keybindings — media & brightness
 bindsym XF86AudioRaiseVolume exec wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+
