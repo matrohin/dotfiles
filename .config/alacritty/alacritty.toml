@@ -5,7 +5,7 @@ size = 16
 [window]
 padding = { x = 0, y = 0 }
 dynamic_padding = true
-opacity = 0.96
+opacity = 0.98
 
 # Colors (Nord)
 
@@ -13,6 +13,38 @@ opacity = 0.96
 [colors.primary]
 background = '#2E3440'
 foreground = '#D8DEE9'
+
+[colors.cursor]
+text   = '#2E3440'
+cursor = '#D8DEE9'
+
+[colors.vi_mode_cursor]
+text   = '#2E3440'
+cursor = '#88C0D0'
+
+[colors.selection]
+text       = 'CellForeground'
+background = '#434C5E'
+
+[colors.search.matches]
+foreground = '#2E3440'
+background = '#88C0D0'
+
+[colors.search.focused_match]
+foreground = '#2E3440'
+background = '#8FBCBB'
+
+[colors.hints.start]
+foreground = '#2E3440'
+background = '#EBCB8B'
+
+[colors.hints.end]
+foreground = '#2E3440'
+background = '#4C566A'
+
+[colors.footer_bar]
+foreground = '#D8DEE9'
+background = '#3B4252'
 
 # Normal colors
 [colors.normal]

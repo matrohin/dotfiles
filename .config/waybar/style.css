@@ -9,15 +9,15 @@ window#waybar {
 }
 
 window#waybar > box {
-    background: rgba(46, 52, 64, 0.96);
+    background: rgba(59, 66, 82, 0.98);
     border: 2px solid rgba(76, 86, 106, 0.6);
     border-radius: 0;
     padding: 4px 2px;
 }
 
 tooltip {
-    background: rgba(46, 52, 64, 0.96);
-    border: 2px solid rgba(136, 192, 208, 0.5);
+    background: rgba(59, 66, 82, 0.98);
+    border: 2px solid rgba(76, 86, 106, 0.6);
     border-radius: 0;
 }
 
@@ -33,7 +33,7 @@ tooltip label {
 }
 
 #workspaces button {
-    color: #4c566a;
+    color: #81a1c1;
     background: transparent;
     border-radius: 0;
     padding: 2px 0;
@@ -44,8 +44,8 @@ tooltip label {
 }
 
 #workspaces button:hover {
-    background: rgba(136, 192, 208, 0.2);
-    color: #88c0d0;
+    background: #434c5e;
+    color: #eceff4;
 }
 
 #workspaces button.focused {
@@ -66,11 +66,11 @@ tooltip label {
 #language,
 #custom-powermenu,
 #wireplumber {
-    background: rgba(59, 66, 82, 0.6);
+    background: transparent;
     color: #d8dee9;
     border-radius: 0;
     padding: 4px 4px;
-    margin: 4px 4px;
+    margin: 4px 2px;
     transition: all 0.2s ease;
 }
 
@@ -83,26 +83,13 @@ tooltip label {
 #language:hover,
 #custom-powermenu:hover,
 #wireplumber:hover {
-    background: rgba(136, 192, 208, 0.3);
+    background: #434c5e;
+    color: #eceff4;
 }
 
 #clock {
-    color: #8fbcbb;
     font-size: 13px;
     padding: 4px 4px;
-}
-
-#network {
-    color: #81a1c1;
-}
-
-#battery {
-    color: #a3be8c;
-}
-
-#battery.charging,
-#battery.plugged {
-    color: #8fbcbb;
 }
 
 #battery.warning:not(.charging) {
@@ -114,17 +101,9 @@ tooltip label {
 }
 
 #network.disconnected {
-    color: #4c566a;
-}
-
-#wireplumber {
-    color: #88c0d0;
+    color: #ebcb8b;
 }
 
 #wireplumber.muted {
-    color: #4c566a;
-}
-
-#language {
-    color: #5e81ac;
+    color: #81a1c1;
 }
