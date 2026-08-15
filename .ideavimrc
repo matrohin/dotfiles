@@ -21,7 +21,7 @@ vnoremap // y/<C-R>"<CR>
 
 " --- Copy/Paste ---
 
-let mapleader = "\\"
+let mapleader = ";"
 
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
@@ -36,18 +36,21 @@ vnoremap <leader>p "+p
 noremap <A-]> :action GotoDeclaration<CR>
 noremap <A-[> :action Back<CR>
 
+noremap <leader>g :action GotoDeclaration<CR>
+noremap <leader>G :action Back<CR>
+
 noremap <leader>t :action SelectInProjectView<CR>
 
 noremap <F2> :action PreviousTab<CR>
 noremap <F3> :action NextTab<CR>
 
-vnoremap <leader>f :action ReformatCode<CR>
-nnoremap <leader>F :action ReformatCode<CR>
+vnoremap <leader>k :action ReformatCode<CR>
+nnoremap <leader>K :action ReformatCode<CR>
 
 " --- Plugin replacements ---
 
 " Switch .c/.h .cpp/.hpp (a.vim)
-noremap <A-s> :action SwitchHeaderSource<CR>
+noremap <leader>; :action SwitchHeaderSource<CR>
 
 " Telescope
 noremap <A-f> :action GotoFile<CR>
@@ -55,10 +58,19 @@ noremap <A-t> :action GotoSymbol<CR>
 noremap <A-b> :action RecentFiles<CR>
 noremap <A-a> :action GotoAction<CR>
 noremap <A-m> :action ShowBookmarks<CR>
-nnoremap <leader>m :delm<Space>
-noremap <leader>b :action ToggleLineBreakpoint<CR>
 noremap <A-R> :action FindInPath<CR>
 noremap <A-r> :action FindInPath<CR>
+
+noremap <leader>f :action GotoFile<CR>
+noremap <leader>t :action GotoSymbol<CR>
+noremap <leader>e :action RecentFiles<CR>
+noremap <leader>a :action GotoAction<CR>
+noremap <leader>m :action ShowBookmarks<CR>
+noremap <leader>R :action FindInPath<CR>
+noremap <leader>r :action FindInPath<CR>
+
+nnoremap <leader>m :delm<Space>
+noremap <leader>b :action ToggleLineBreakpoint<CR>
 
 " diffview
 noremap <leader>d :action Vcs.ShowTabbedFileHistory<CR>

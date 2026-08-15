@@ -1,5 +1,7 @@
 local home = vim.fn.expand("~")
 
+vim.g.mapleader = ";"
+
 -- Appearance
 
 vim.opt.number = true
@@ -65,15 +67,14 @@ vim.keymap.set('n', '<F2>', ':bprev<CR>')
 vim.keymap.set('n', '<F3>', ':bnext<CR>')
 
 --- Formatting (requires formatprg to be set up) ---
-vim.keymap.set('v', '<leader>f', 'gq')
-vim.keymap.set('n', '<leader>F', 'gggqG')
+vim.keymap.set('v', '<leader>k', 'gq')
+vim.keymap.set('n', '<leader>K', 'gggqG')
 
 --- PLUGINS ---
 
 local Plug = vim.fn['plug#']
 vim.call('plug#begin')
 
-Plug('vim-scripts/a.vim')
 Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate', ['branch'] = 'main' })
 Plug('nvim-lua/plenary.nvim')
 Plug('rmehri01/onenord.nvim', { ['branch'] = 'main' })
@@ -98,6 +99,16 @@ vim.keymap.set('n', '<A-m>', ':Telescope marks<CR>')
 vim.keymap.set('n', '<A-R>', ':Telescope live_grep<CR>')
 vim.keymap.set('n', '<A-r>', ':Telescope grep_string search=')
 vim.keymap.set('v', '<A-r>', 'y:Telescope grep_string search=<C-R>"<CR>')
+
+vim.keymap.set('n', '<leader>f', ':Telescope find_files<CR>')
+vim.keymap.set('n', '<leader>F', ':Telescope find_files hidden=true<CR>')
+vim.keymap.set('n', '<leader>s', ':Telescope tags<CR>')
+vim.keymap.set('n', '<leader>b', ':Telescope buffers sort_mru=true ignore_current_buffer=true<CR> ')
+vim.keymap.set('n', '<leader>h', ':Telescope help_tags<CR>')
+vim.keymap.set('n', '<leader>M', ':Telescope marks<CR>')
+vim.keymap.set('n', '<leader>R', ':Telescope live_grep<CR>')
+vim.keymap.set('n', '<leader>r', ':Telescope grep_string search=')
+vim.keymap.set('v', '<leader>r', 'y:Telescope grep_string search=<C-R>"<CR>')
 
 
 require('telescope').setup {
@@ -129,7 +140,24 @@ require('telescope').load_extension('fzf')
 
 
 -- Switch between .c/.h .cpp/.hpp
-vim.keymap.set('n', '<A-s>', ':A<CR>')
+vim.keymap.set('n', '<leader>;', function()
+  local file = vim.fn.expand('%:p')
+  local name = vim.fn.fnamemodify(file, ':r')
+  local ext = vim.fn.fnamemodify(file, ':e')
+  local alts = (ext == 'h' or ext == 'hpp') and {'cpp', 'c'} or {'h', 'hpp'}
+  local paths = {}
+  for _, alt in ipairs(alts) do
+    table.insert(paths, name .. '.' .. alt)
+    table.insert(paths, name:gsub('/include/', '/src/') .. '.' .. alt)
+    table.insert(paths, name:gsub('/src/', '/include/') .. '.' .. alt)
+  end
+  for _, path in ipairs(paths) do
+    if vim.fn.filereadable(path) == 1 then
+      return vim.cmd.edit(path)
+    end
+  end
+  vim.notify('Cannot switch header/source')
+end)
 
 -- Tree-Sitter (syntax highlighting)
 local parsers = { 'cpp', 'c', 'rust', 'kotlin', 'python', 'markdown', 'lua' }
