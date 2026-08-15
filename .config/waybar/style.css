@@ -8,24 +8,16 @@ window#waybar {
     background: transparent;
 }
 
-/* Drop the GTK theme's own button chrome, incl. its blue hover/focus outline */
-button {
-    border: none;
-    outline: none;
-    box-shadow: none;
-    text-shadow: none;
-}
-
-/* Frameless; opacity lets the wallpaper through so the bar tracks it */
 window#waybar > box {
-    background: rgba(46, 52, 64, 0.85);
+    background: rgba(46, 52, 64, 0.96);
+    border: 2px solid rgba(76, 86, 106, 0.6);
     border-radius: 0;
     padding: 4px 2px;
 }
 
 tooltip {
     background: rgba(46, 52, 64, 0.96);
-    border: 2px solid rgba(208, 135, 112, 0.5);
+    border: 2px solid rgba(136, 192, 208, 0.5);
     border-radius: 0;
 }
 
@@ -41,7 +33,7 @@ tooltip label {
 }
 
 #workspaces button {
-    color: #616e88;
+    color: #4c566a;
     background: transparent;
     border-radius: 0;
     padding: 2px 0;
@@ -52,13 +44,13 @@ tooltip label {
 }
 
 #workspaces button:hover {
-    background: rgba(208, 135, 112, 0.25);
-    color: #d08770;
+    background: rgba(136, 192, 208, 0.2);
+    color: #88c0d0;
 }
 
 #workspaces button.focused {
-    background: #d08770;
-    color: #2e3440;
+    background: #5e81ac;
+    color: #eceff4;
     border-radius: 0;
 }
 
@@ -67,7 +59,6 @@ tooltip label {
     color: #2e3440;
 }
 
-/* Modules run a cool-to-warm ramp down the bar; see per-module hues below */
 #clock,
 #network,
 #battery,
@@ -75,13 +66,15 @@ tooltip label {
 #language,
 #custom-powermenu,
 #wireplumber {
-    background: transparent;
+    background: rgba(59, 66, 82, 0.6);
     color: #d8dee9;
     border-radius: 0;
     padding: 4px 4px;
     margin: 4px 4px;
     transition: all 0.2s ease;
 }
+
+
 
 #clock:hover,
 #network:hover,
@@ -90,45 +83,30 @@ tooltip label {
 #language:hover,
 #custom-powermenu:hover,
 #wireplumber:hover {
-    background: rgba(208, 135, 112, 0.25);
+    background: rgba(136, 192, 208, 0.3);
 }
 
-#wireplumber {
-    color: #b48ead;
-}
-
-#bluetooth {
-    color: #81a1c1;
+#clock {
+    color: #8fbcbb;
+    font-size: 13px;
+    padding: 4px 4px;
 }
 
 #network {
-    color: #8fbcbb;
+    color: #81a1c1;
 }
 
 #battery {
     color: #a3be8c;
 }
 
-#language {
-    color: #ebcb8b;
-}
-
-#clock {
-    color: #d08770;
-    font-size: 13px;
-}
-
-#custom-powermenu {
-    color: #bf616a;
-}
-
 #battery.charging,
 #battery.plugged {
-    color: #88c0d0;
+    color: #8fbcbb;
 }
 
 #battery.warning:not(.charging) {
-    color: #d08770;
+    color: #ebcb8b;
 }
 
 #battery.critical:not(.charging) {
@@ -139,6 +117,14 @@ tooltip label {
     color: #4c566a;
 }
 
+#wireplumber {
+    color: #88c0d0;
+}
+
 #wireplumber.muted {
     color: #4c566a;
+}
+
+#language {
+    color: #5e81ac;
 }

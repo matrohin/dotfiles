@@ -35,7 +35,7 @@ gaps inner 2
 gaps outer 2
 default_border pixel 2
 
-client.focused          #d08770 #d08770 #2e3440 #ebcb8b #d08770
+client.focused          #5e81ac #5e81ac #eceff4 #88c0d0 #5e81ac
 client.unfocused        #3b4252 #2e3440 #d8dee9 #3b4252 #3b4252
 
 ### Floating modifier (LMB drag, RMB resize)
